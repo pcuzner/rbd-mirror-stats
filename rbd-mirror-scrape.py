@@ -50,6 +50,7 @@ class Collector:
         for k in self.metrics:
             if self.metrics[k].value:
                 s += str(self.metrics[k])
+                self.metrics[k].clear()
         return s
 
     def collect(self):
@@ -147,6 +148,9 @@ class Metric:
     def set(self, value, labelvalues=None):
         labelvalues = labelvalues or ("",)
         self.value[labelvalues] = value
+
+    def clear(self):
+        self.value = {}
 
 
 class MetricsHandler(BaseHTTPRequestHandler):
