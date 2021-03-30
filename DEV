@@ -1,0 +1,8 @@
+Commands that are issued
+
+rbd mirror snapshot schedule ls --recursive --format json
+
+rbd -p {pool} mirror pool status --format json
+
+rbd -p {pool} mirror pool info --format json
+
